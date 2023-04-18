@@ -1,0 +1,18 @@
+version: 0.2
+        
+phases:
+  install:
+    runtime-versions:
+      dotnet: 6.0
+  pre_build:
+    commands:
+      - dotnet restore MyApp/MyApp.csproj
+  build:
+    commands:
+      - dotnet build MyApp/MyApp.csproj
+  post_build:
+    commands:
+      - dotnet publish -c Release -o ./app/ MyApp/MyApp.csproj
+artifacts:
+  files:
+    - '**/*'
