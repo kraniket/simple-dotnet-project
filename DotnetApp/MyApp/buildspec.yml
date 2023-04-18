@@ -6,13 +6,13 @@ phases:
       dotnet: 6.0
   pre_build:
     commands:
-      - dotnet restore MyApp/MyApp.csproj
+      - dotnet restore DotnetApp/MyApp/MyApp.csproj
   build:
     commands:
-      - dotnet build MyApp/MyApp.csproj
+      - dotnet build DotnetApp/MyApp/MyApp.csproj
   post_build:
     commands:
-      - dotnet publish -c Release -o ./app/ MyApp/MyApp.csproj
+      - dotnet publish -c Release -o ./app/ DotnetApp/MyApp/MyApp.csproj
 artifacts:
   files:
     - '**/*'
